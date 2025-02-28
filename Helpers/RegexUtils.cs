@@ -83,7 +83,8 @@ internal static partial class RegexUtils
 
     private static string[] SplitText(string text)
     {
-        return text.Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries);
+        char[] separators = {'\r', '\n'};
+        return text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
     }
 
     private static bool SplitAndMatch(string line, string pattern)
